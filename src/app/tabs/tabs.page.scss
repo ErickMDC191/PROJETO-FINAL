@@ -1,0 +1,44 @@
+/* Responsividade para telas menores */
+@media (max-width: 767px) {
+  ion-tab-button {
+    font-size: 14px;
+    --padding-top: 10px;
+  }
+
+  ion-label {
+    display: none; /* Ocultar legendas em telas pequenas */
+  }
+}
+
+/* Estilo global para as tabs */
+ion-tab-bar {
+  --background: #f1f1f1; /* Cor de fundo das tabs */
+  --color-selected: #4caf50; /* Cor do ícone selecionado */
+  --color: #888888; /* Cor dos ícones não selecionados */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Estilo de cada botão da tab */
+ion-tab-button {
+  --padding-top: 5px;
+  transform: scale(0.95);
+  transition: transform 0.2s ease-in-out;
+  --border-radius: 10px; /* Borda arredondada */
+}
+
+/* Estilo da tab selecionada */
+ion-tab-button[selected] {
+  --border-color: #3880ff; /* Cor da borda para a aba selecionada */
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao redor da aba */
+}
+
+/* Estilo dos ícones */
+ion-icon {
+  font-size: 30px; /* Tamanho do ícone */
+  color: black;
+}
+
+/* Estilo da legenda (label) nas tabs */
+ion-label {
+  font-size: 12px; /* Tamanho da legenda da aba */
+}

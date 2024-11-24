@@ -1,0 +1,8 @@
+{
+  "name": "FanaticoFC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+  
+}

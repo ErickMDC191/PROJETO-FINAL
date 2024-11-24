@@ -1,0 +1,31 @@
+ion-card img {
+    width: 300px; /* Largura da imagem */
+    height: 300px; /* Altura da imagem */
+    display: block; /* Torna a imagem um bloco para aplicar margin */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border-radius: 50%; /* Deixa a imagem em formato circular (opcional) */
+  }
+  
+  
+  ion-card {
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Toolbar */
+ion-toolbar {
+    --background: #006600; /* Cor da toolbar */
+  }
+  
+  /* Título */
+  ion-title {
+    color: #ffffff; /* Cor do título */
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Fundo */
+  ion-content {
+    --background: linear-gradient(to bottom, #002200, #004d00); /* Fundo gradiente */
+  }

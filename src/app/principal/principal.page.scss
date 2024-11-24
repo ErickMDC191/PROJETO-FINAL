@@ -1,0 +1,115 @@
+/* Geral */
+* {
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Header */
+ion-menu {
+  --background: #004d00;
+  color: #e6e6e6;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.4); /* Ajuste para maior contraste */
+  transition: transform 0.3s ease-in-out;
+}
+
+ion-menu.open {
+  transform: translateX(0);
+}
+
+ion-toolbar {
+  --background: #006600;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+}
+
+/* Título */
+ion-title {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+/* Estilo do conteúdo */
+ion-content {
+  --background: linear-gradient(to bottom, #002200, #004d00);
+  padding: 1rem;
+}
+
+/* Tabela */
+.header-row {
+  font-weight: bold;
+  background-color: rgba(0, 51, 0, 0.8);
+  color: #e6e6e6; /* Mantendo contraste com o fundo */
+  border-bottom: 2px solid #006600;
+}
+
+.highlight-row {
+  background-color: rgba(0, 77, 0, 0.2); /* Alternância de cor para linhas pares */
+}
+
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+}
+
+ion-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%; /* Escudo circular */
+}
+
+ion-row:hover {
+  background-color: rgba(0, 77, 0, 0.5); /* Cor mais escura no hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Mensagens de erro e carregamento */
+.loading-message {
+  color: #0288d1;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+}
+
+.team-info {
+  display: flex;
+  align-items: center; /* Alinha verticalmente no centro */
+  justify-content: flex-start; /* Alinha horizontalmente à esquerda */
+  gap: 8px; /* Espaçamento entre o escudo e o nome */
+}
+
+.team-logo {
+  width: 32px; /* Tamanho do escudo */
+  height: 32px; /* Altura do escudo */
+  object-fit: contain; /* Garante que o escudo seja exibido corretamente */
+  border-radius: 50%; /* Torna o escudo circular, se necessário */
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clickable-row:hover {
+  background-color: #e0f7fa;
+}
+
+
+@media (max-width: 768px) {
+  .team-logo {
+    width: 24px; /* Ajusta o tamanho do escudo em telas menores */
+    height: 24px;
+  }
+}
+

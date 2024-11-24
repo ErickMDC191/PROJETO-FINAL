@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="container">
+    <h1 class="titulo">F.C</h1>
+    <p class="subtitulo">Crie sua conta</p>
+
+    <div class="formulario">
+      
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="person-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input [(ngModel)]="formData.nome" name="nome" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="mail-outline" slot="start"></ion-icon>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input [(ngModel)]="formData.email" name="email" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="formData.senha" name="senha" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Confirmar Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="formData.confirmarSenha" name="confirmarSenha" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="calendar-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Data de Nascimento</ion-label>
+      <ion-input [(ngModel)]="formData.dataNascimento" name="dataNascimento" type="text" placeholder="DD/MM/AAAA" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="transgender-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Sexo</ion-label>
+      <ion-select [(ngModel)]="formData.sexo" name="sexo" placeholder="Selecione" required>
+        <ion-select-option value="masculino">Masculino</ion-select-option>
+        <ion-select-option value="feminino">Feminino</ion-select-option>
+        <ion-select-option value="outro">Outro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-icon style="color: black;" name="football-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Time Favorito</ion-label>
+      <ion-input [(ngModel)]="formData.timeFavorito" name="timeFavorito" type="text" required></ion-input>
+    </ion-item>
+
+    <div class="opcoes">
+      <a routerLink="/login" class="link">Já possui uma conta? Faça login</a>
+    </div>
+    <ion-button expand="block" class="custom-button" (click)="cadastrarUsuario()">Cadastrar</ion-button>
+    </div>
+  </div>
+</ion-content>

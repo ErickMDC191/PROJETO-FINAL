@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <ion-icon slot="start" name="football"></ion-icon>
+      Brasileirão Série A
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Barra de Pesquisa -->
+  <ion-searchbar 
+    [(ngModel)]="searchTerm" 
+    (ionInput)="onSearchChange($event)" 
+    debounce="300" 
+    placeholder="Pesquisar time" 
+    color="light">
+  </ion-searchbar>
+
+  <!-- Carregando com animação -->
+  <ng-container *ngIf="isLoadingTabela; else tabelaContent">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p class="loading-message">Carregando a tabela...</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!-- Mensagem de erro -->
+  <ion-card *ngIf="errorMessageTabela">
+    <ion-card-content class="ion-text-center">
+      <ion-icon name="sad-outline" size="large"></ion-icon>
+      <p class="error-message">{{ errorMessageTabela }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Exibição da Tabela -->
+  <ng-template #tabelaContent>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Classificação</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <!-- Cabeçalho da Tabela -->
+          <ion-row class="header-row">
+            <ion-col size="1" class="ion-text-center">#</ion-col>
+            <ion-col size="4" class="ion-text-center">Time</ion-col>
+            <ion-col size="2" class="ion-text-center">Pts</ion-col>
+            <ion-col size="2" class="ion-text-center">Vitórias</ion-col>
+            <ion-col size="2" class="ion-text-center">Derrotas</ion-col>
+          </ion-row>
+
+          <!-- Dados da Tabela -->
+          <ion-row 
+            *ngFor="let time of filteredTabela; let i = index" 
+            [ngClass]="{'highlight-row': i % 2 === 0}">
+            <ion-col size="1" class="ion-text-center">{{ time.posicao }}</ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <div class="team-info">
+                <ion-img 
+                  [src]="time.time.escudo" 
+                  [alt]="'Escudo do ' + time.time.nome_popular" 
+                  class="team-logo">
+                </ion-img>
+                <span>{{ time.time.nome_popular }}</span>
+              </div>
+            </ion-col>
+            <ion-col size="2" class="ion-text-center">{{ time.pontos }}</ion-col>
+            <ion-col size="2" class="ion-text-center">{{ time.vitorias }}</ion-col>
+            <ion-col size="2" class="ion-text-center">{{ time.derrotas }}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+</ion-content>

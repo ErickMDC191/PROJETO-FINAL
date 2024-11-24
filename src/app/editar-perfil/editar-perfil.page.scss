@@ -1,0 +1,147 @@
+ion-content {
+    --background: linear-gradient(to bottom, #004d00, #66cc66); /* Gradiente de fundo */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .topo {
+    margin-bottom: 20px;
+  }
+  
+  .titulo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destaque */
+  }
+  
+  .subtitulo {
+    font-size: 1.5em;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .formulario {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .custom-input {
+    --background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    --border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra nos inputs */
+    --color: #333; /* Cor do texto digitado */
+  }
+  
+  ion-input::placeholder {
+    color: #666; /* Cor do placeholder */
+  }
+  
+  ion-input {
+    margin-bottom: 15px; /* Espaço entre os campos */
+  }
+  
+  
+  ion-label {
+    color: #004d00; /* Cor do label */
+    font-weight: bold;
+  }
+  
+  .opcoes {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .link {
+    color: #ffcc00; /* Destaque para o link */
+    text-decoration: underline;
+  }
+  
+  .icones {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    width: 80%; /* Largura ajustada */
+  }
+  
+  .icone {
+    font-size: 2em;
+    color: white;
+    transition: transform 0.2s;
+  }
+  
+  .icone:hover {
+    transform: scale(1.2);
+  }
+  
+  .rodape {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
+  }
+  
+  /* Responsividade */
+  
+  @media (max-width: 768px) {
+    .titulo {
+      font-size: 2em;
+    }
+  
+    .subtitulo {
+      font-size: 1.2em;
+    }
+  
+    .formulario {
+      padding: 0 10px;
+    }
+  
+    .custom-input {
+      max-width: 100%;
+    }
+  
+    .botao-login {
+      font-size: 1.1em;
+      width: 100%;
+    }
+  
+    .icones {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo {
+      font-size: 1.8em;
+    }
+  
+    .subtitulo {
+      font-size: 1.1em;
+    }
+  
+    .botao-login {
+      font-size: 1em;
+    }
+  
+    .icones {
+      width: 100%;
+    }
+  
+    .icone {
+      font-size: 1.5em;
+    }
+  }
+  

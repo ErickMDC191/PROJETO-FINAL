@@ -1,0 +1,247 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+ion-button[color="danger"] {
+  --background: #ff4d4d;
+  --color: white;
+}
+ion-button[color="danger"]:hover {
+  --background: #ff1a1a;
+}
+
+/* Global CSS */
+
+/* Definições gerais */
+body, ion-content {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ion-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+header, footer {
+  text-align: center;
+  padding: 16px;
+  background-color: #f8f9fa;
+}
+
+/* Classes de grid flexível */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.grid-item {
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Formatação de textos */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.text-small {
+  font-size: 14px;
+  color: #999;
+}
+
+/* Botões responsivos */
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-secondary {
+  background-color: #6c757d;
+}
+
+.button-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Imagens */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Tabelas responsivas */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th, .responsive-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.responsive-table th {
+  background-color: #f2f2f2;
+}
+
+.responsive-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Formulários */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-button {
+  --background: #075c07;
+  --border-radius: 4px; 
+  --box-shadow: none; 
+  --border-width: 0; 
+  --padding-start: 16px; 
+  --padding-end: 16px;
+  --height: 50px; 
+  color: white; 
+  font-size: 16px; 
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.custom-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Media Queries */
+
+/* Telas menores que 768px (Tablets e smartphones em paisagem) */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .text-small {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+/* Telas menores que 480px (Smartphones em retrato) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .text-small {
+    font-size: 10px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .responsive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+
+  
+  

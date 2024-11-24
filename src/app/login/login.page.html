@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="container">
+    <!-- Cabeçalho com título -->
+    <div class="topo">
+      <h1 class="titulo">Fanático F.C</h1>
+    </div>
+
+    <!-- Formulário de Login -->
+    <div class="formulario">
+      <h2 class="subtitulo">Bem-vindo de volta!</h2>
+
+      <ion-item class="custom-input">
+        <ion-icon style="color: black;" name="mail-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input id="email" type="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-input">
+        <ion-icon style="color: black;" name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input id="senha" type="password" required></ion-input>
+      </ion-item>
+
+      <div class="opcoes">
+        <a routerLink="/cadastro" class="link">Ainda não tem um cadastro?</a>
+      </div>
+
+      <!-- Redes sociais -->
+      <div class="icones">
+        <ion-icon name="logo-facebook" class="icone"></ion-icon>
+        <ion-icon name="logo-google" class="icone"></ion-icon>
+        <ion-icon name="logo-twitter" class="icone"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Botão de Login -->
+    <div class="rodape">
+      <ion-button expand="block" class="custom-button" (click)="loginUsuario()">Login</ion-button>
+    </div>
+  </div>
+</ion-content>

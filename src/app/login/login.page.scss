@@ -1,0 +1,108 @@
+ion-content {
+  --background: linear-gradient(to bottom, #004d00, #66cc66); /* Gradiente de fundo */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.topo {
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destaque */
+}
+
+.subtitulo {
+  font-size: 1.5em;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.formulario {
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-input {
+  --background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+  --border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra nos inputs */
+  --color: #333; /* Cor do texto digitado */
+}
+
+ion-input::placeholder {
+  color: #666; /* Cor do placeholder */
+}
+
+ion-label {
+  color: #004d00; /* Cor do label */
+  font-weight: bold;
+}
+
+.opcoes {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.link {
+  color: #ffcc00; /* Destaque para o link */
+  text-decoration: underline;
+}
+
+.icones {
+  display: flex;
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+  align-items: center; /* Centraliza os ícones verticalmente */
+  margin-top: 20px; /* Espaço opcional entre o formulário e os ícones */
+}
+
+.icone {
+  font-size: 2em; /* Ajuste o tamanho dos ícones conforme necessário */
+  margin: 0 15px; /* Espaçamento entre os ícones */
+  cursor: pointer; /* Para tornar o ícone interativo */
+}
+
+
+.icone:hover {
+  transform: scale(1.2);
+}
+
+.rodape {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza o botão */
+}
+
+.botao-login {
+  --background: #009900;
+  --border-radius: 25px;
+  width: 80%;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botao-login:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}

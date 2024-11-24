@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <ion-icon name="football-outline"></ion-icon> Jogos ao Vivo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-content">
+  <!-- Carregamento -->
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Carregando jogos...</p>
+  </div>
+
+  <!-- Jogos ao Vivo -->
+  <ion-card *ngIf="!isLoading && jogosAoVivo.length > 0">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="play-circle-outline" slot="start"></ion-icon>
+        Jogos ao Vivo
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let jogo of jogosAoVivo" lines="none" class="live-game">
+          <ion-avatar slot="start">
+            <ion-img [src]="jogo.time_mandante.escudo" alt="Escudo {{ jogo.time_mandante.nome_popular }}"></ion-img>
+          </ion-avatar>
+
+          <ion-label class="game-label">
+            <h2>{{ jogo.time_mandante.nome_popular }} x {{ jogo.time_visitante.nome_popular }}</h2>
+            <p class="placar">
+              <strong>{{ jogo.placar_mandante }}</strong> x <strong>{{ jogo.placar_visitante }}</strong>
+            </p>
+            <p class="estadio">Estádio: {{ jogo.estadio?.nome_popular }}</p>
+          </ion-label>
+
+          <ion-avatar slot="end">
+            <ion-img [src]="jogo.time_visitante.escudo" alt="Escudo {{ jogo.time_visitante.nome_popular }}"></ion-img>
+          </ion-avatar>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Histórico de Partidas -->
+  <ion-card *ngIf="!isLoading && jogosAoVivo.length === 0 && partidasRecentes.length > 0">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="time" slot="start"></ion-icon>
+        Partidas Recentes
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let partida of partidasRecentes" lines="none">
+          <ion-label class="game-label">
+            <h2>{{ partida.time_mandante.nome_popular }} x {{ partida.time_visitante.nome_popular }}</h2>
+            <p><strong>Placar:</strong> {{ partida.placar }}</p>
+            <p><strong>Data:</strong> {{ partida.data_realizacao | date: 'shortDate' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Nenhum Jogo ou Histórico -->
+  <div *ngIf="!isLoading && jogosAoVivo.length === 0 && partidasRecentes.length === 0" class="empty-state">
+    <ion-icon name="sad-outline" size="large" color="medium"></ion-icon>
+    <p>Nenhum jogo ao vivo ou recente disponível.</p>
+  </div>
+</ion-content>

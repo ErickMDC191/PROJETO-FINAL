@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rodada {{ rodadaInfo?.rodada || '...' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Seletor de Rodadas -->
+  <ion-item class="seletor-rodada">
+    <ion-label>Escolha a Rodada</ion-label>
+    <ion-select placeholder="Selecione" (ionChange)="alterarRodada($event.detail.value)">
+      <ion-select-option *ngFor="let rodada of rodadasDisponiveis" [value]="rodada.rodada">
+        {{ rodada.nome || 'Rodada ' + rodada.rodada }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Carregamento -->
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Aguarde, carregando as informações...</p>
+  </div>
+
+  <!-- Detalhes da Rodada -->
+  <div *ngIf="!isLoading && rodadaInfo">
+    <h2 class="rodada-nome">{{ rodadaInfo.nome }}</h2>
+    <p><strong>Status:</strong> {{ rodadaInfo.status | titlecase }}</p>
+
+    <!-- Partidas -->
+    <div class="rodada-container">
+      <div *ngFor="let partida of rodadaInfo.partidas" class="partida-card">
+        <ion-card (click)="abrirDetalhes(partida.id)">
+          <ion-card-header>
+            <div class="card-row">
+              <!-- Time Mandante -->
+              <div class="escudo-container">
+                <ion-avatar class="escudo">
+                  <img [src]="partida.time_mandante.escudo" [alt]="partida.time_mandante.nome">
+                </ion-avatar>
+                <p class="time-nome">{{ partida.time_mandante.nome }}</p>
+              </div>
+      
+              <!-- Placar -->
+              <div class="placar-container">
+                <p class="placar">{{ partida.placar_mandante }} - {{ partida.placar_visitante }}</p>
+              </div>
+      
+              <!-- Time Visitante -->
+              <div class="escudo-container">
+                <ion-avatar class="escudo">
+                  <img [src]="partida.time_visitante.escudo" [alt]="partida.time_visitante.nome">
+                </ion-avatar>
+                <p class="time-nome">{{ partida.time_visitante.nome }}</p>
+              </div>
+            </div>
+          </ion-card-header>
+      
+          <ion-card-content>
+            <p><strong>Data:</strong> {{ partida.data_realizacao | date: 'short' }}</p>
+            <p><strong>Estádio:</strong> {{ partida.estadio?.nome || 'Não informado' }}</p>
+            <p [ngClass]="getStatusClass(partida.status)">
+              <strong>Status:</strong> {{ partida.status | titlecase }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensagem de Estado Vazio -->
+  <div *ngIf="!isLoading && !rodadaInfo" class="empty-state">
+    <ion-icon name="sad-outline"></ion-icon>
+    <p>Nenhuma informação disponível para esta rodada.</p>
+  </div>
+</ion-content>

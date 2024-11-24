@@ -1,0 +1,82 @@
+ion-content {
+  --background: linear-gradient(to bottom, #004d00, #66cc66); /* gradiente mais suave */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+}
+
+.subtitulo {
+  font-size: 1.4em;
+  color: #f2f2f2;
+  margin-top: -10px;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.botao-iniciar {
+  margin-top: 30px;
+  --background: #009900;
+  --border-radius: 15px;
+  width: 60%;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao botão */
+  transition: transform 0.2s, box-shadow 0.2s; /* Suaviza transições */
+
+  /* Efeito ao passar o mouse no botão */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+ion-icon{
+  font-size: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.5em; /* Ajusta o tamanho da fonte para tablets */
+  }
+
+  .subtitulo {
+    font-size: 1.2em; /* Ajusta o tamanho do subtítulo */
+  }
+
+  .botao-iniciar {
+    width: 80%; /* Aumenta a largura do botão */
+    font-size: 1em; /* Diminui o tamanho da fonte do botão */
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 2em; /* Ajusta o tamanho da fonte para smartphones */
+  }
+
+  .subtitulo {
+    font-size: 1em; /* Ajusta o tamanho do subtítulo */
+  }
+
+  .botao-iniciar {
+    width: 90%; /* Aumenta ainda mais a largura do botão */
+    font-size: 0.9em; /* Ajusta o tamanho da fonte */
+  }
+}

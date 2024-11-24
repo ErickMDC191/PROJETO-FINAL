@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h1 class="titulo">Seu Perfil</h1>
+    <div class="subtitulo">Informações Pessoais</div>
+
+    <!-- Exibir dados do usuário -->
+    <div class="informacoes-usuario">
+      <div class="informacao-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <span><strong>Nome:</strong> {{ userData.nome || 'Carregando...' }}</span>
+      </div>
+      <div class="informacao-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <span><strong>Email:</strong> {{ userData.email || 'Carregando...' }}</span>
+      </div>
+      <div class="informacao-item">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <span><strong>Data de Nascimento:</strong> {{ userData.dataNascimento || 'Carregando...' }}</span>
+      </div>
+      <div class="informacao-item">
+        <ion-icon name="transgender-outline" slot="start"></ion-icon>
+        <span><strong>Sexo:</strong> {{ userData.sexo || 'Carregando...' }}</span>
+      </div>
+      <div class="informacao-item">
+        <ion-icon name="football-outline" slot="start"></ion-icon>
+        <span><strong>Time Favorito:</strong> {{ userData.timeFavorito || 'Carregando...' }}</span>
+      </div>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="acoes">
+      <ion-button expand="block" class="botao-editar" (click)="editarPerfil()">Editar Perfil</ion-button>
+      <ion-button expand="block" class="botao-logout" color="danger" (click)="logout()">Logout</ion-button>
+    </div>
+  </div>
+</ion-content>
