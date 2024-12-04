@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiFutebolService {
   private apiUrl = 'https://api.api-futebol.com.br/v1';
-  private apiKey = 'live_c72acd346f5c694254b3b9b54ae560'; // Substitua pela sua chave de API
+  private apiKey = 'live_c72acd346f5c694254b3b9b54ae560';
 
   constructor(private http: HttpClient) {}
 
